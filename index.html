@@ -1,16 +1,12 @@
 <head>
   <!-- Plotly.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
   
-  <div id="myDiv"><!-- Plotly--></div>
-  <script src="function.js" ></script>
- 
-
-  </script> 
+  <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+   <script src="script.js"></script>
  
 <table style="width:25%">
   <tr>
@@ -58,29 +54,39 @@
     <td>$4.00</td>
     <td><p id="y7"></p></td>
   </tr>
-    <tr>
-    <td>$99</td>
-    <td>$6.00</td>
-    <td><p id="y8"></p></td>
-  </tr>
+
 
 </table>
 
 
   <script>
-  	var cost = [Math.abs(40*(trip-2.25)), Math.abs(40*(trip- 2.5)), Math.abs(40*(trip- 2.75)), Math.abs(40*(trip-3)), Math.abs(40*(trip-3.25)), Math.abs(40*(trip-3.5)), Math.abs(40*(trip- 3.75)), Math.abs(40*(trip- 4)), Math.abs(40*(trip-6))];
-  	document.getElementById("y0").innerHTML = 81+cost[0];
-  	document.getElementById("y1").innerHTML = 90+cost[1];
-  	document.getElementById("y2").innerHTML = 99+cost[2];
-  	document.getElementById("y3").innerHTML = 108+cost[3];
-  	document.getElementById("y4").innerHTML = 117+cost[4];
-  	document.getElementById("y5").innerHTML = 126+cost[5];
-  	document.getElementById("y6").innerHTML = 135+cost[6];
-  	document.getElementById("y7").innerHTML = 144+cost[7];
-  	document.getElementById("y8").innerHTML = 216+cost[8];
-
+  	var x = 3.3;
+	var point = [2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4];
+	var cost = [81, 90, 99, 108, 117, 126, 135, 144];
+	var text = "";
+	var i;
+	
+	for (i = 0; i < point.length; i++) {
+    	if (point[i]< x) {
+    	cost[i] = cost[i] + 40*Math.abs(x-point[i]);
+    	text += cost[i] + "<br>";
+    } else {
+}
+    
+}
+  	document.getElementById("y0").innerHTML = cost[0];
+  	document.getElementById("y1").innerHTML = cost[1];
+  	document.getElementById("y2").innerHTML = cost[2];
+  	document.getElementById("y3").innerHTML = cost[3];
+  	document.getElementById("y4").innerHTML = cost[4];
+  	document.getElementById("y5").innerHTML = cost[5];
+  	document.getElementById("y6").innerHTML = cost[6];
+  	document.getElementById("y7").innerHTML = cost[7];
+  	
 </script>
 
 
 
+
 </body>
+
